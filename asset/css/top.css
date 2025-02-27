@@ -1,0 +1,1269 @@
+/* ファーストビューのスタイル */
+.fv {
+    position: relative;
+    width: 100%;
+    max-height: 750px;
+    height: 750px;
+    overflow: hidden;
+}
+
+.fv-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(/asset/img/fv.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+
+}
+
+.fv-content {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+
+}
+
+.fv-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* NEWS セクションのスタイル */
+/* NEWS セクションのスタイル */
+.news {
+    background: white;
+    padding: 50px 0 20px;
+    text-align: left;
+    border-bottom: 2px solid #d01e28;
+}
+
+.news-container {
+    max-width: 1500px;
+    margin: 0 0 0 19%;
+    padding: 0 20px;
+    position: relative;
+}
+
+.news-header {
+    width: 96%;
+    margin-bottom: 20px;
+    display: block;
+    margin-right: 0;
+}
+
+.news h2 {
+    font-size: 4.4rem;
+    font-weight: normal;
+    color: #D70C18;
+    margin-bottom: 0px;
+    text-align: left;
+    letter-spacing: 1rem;
+}
+
+.news-list {
+    list-style: none;
+    padding: 0;
+}
+
+.news_wrp {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.news-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0 5px 0;
+    font-size: 1.8rem;
+}
+
+.news-date {
+    color: #333;
+    margin-right: 20px;
+    white-space: nowrap;
+    min-width: 140px;
+}
+
+.news-tag {
+    background: #E8D9D8;
+    padding: 0 15px;
+    font-size: 1.8rem;
+    margin-right: 20px;
+    white-space: nowrap;
+    min-width: 100px;
+    text-align: center;
+    color: #333;
+}
+
+.tag-pdf {
+    background: #d01e28;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.tag-pdf img {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.news-list p {
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.news-list p img {
+    width: 40px;
+    height: 40px;
+    display: inline;
+}
+
+.news-more {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.news-more img {
+    max-width: 150px;
+}
+
+/* スライダーセクションのスタイル */
+.sec_slider {
+    position: relative;
+    max-width: 1700px;
+    margin: 50px auto;
+}
+
+.slider_wrp {
+    width: 80%;
+    margin-inline: auto;
+}
+
+.sec_slider h2 {
+    font-size: 4.4rem;
+    font-weight: normal;
+    color: #D70C18;
+    margin-bottom: 5px;
+    text-align: left;
+    letter-spacing: 1rem;
+}
+
+.slider-container {
+    position: relative;
+    overflow: visible !important;
+}
+
+.sec_slider .more_btm_wrp {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.slick-slide {
+    margin: 0 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.sec_slider .slick-prev,
+.sec_slider .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.sec_slider .slick-prev {
+    left: -60px;
+}
+
+.sec_slider .slick-next {
+    right: -60px;
+}
+
+.sec_slider .slick-dots {
+    display: none;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    background-color: #ccc;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.slick-dots li button:before {
+    display: none;
+}
+
+/* スライドのキャプション（画像の下に配置） */
+.slide-caption-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.slide-caption {
+    background: rgba(200, 200, 200, 0.7);
+    /* 通常時の背景色：薄いグレー */
+    color: black;
+    /* 通常時の文字色 */
+    text-align: center;
+    padding: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 90px;
+}
+
+.slick-slide.slick-center .slide-caption {
+    background: rgba(255, 0, 0, 0.7);
+    /* 中央スライド時の背景色：赤 */
+    color: black;
+    /* 中央スライド時の文字色：黒 */
+}
+
+/* リスクマネジメントセクションのスタイル */
+.risk-management {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url('/asset/img/bg_sec_3.jpg') no-repeat center center/cover;
+}
+
+
+.risk-management .content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.risk-management h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.risk-management p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn-detail {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #d01e28;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-detail:hover {
+    background: #a9151f;
+}
+
+/* MST Group Service セクション */
+.group-service {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+}
+
+
+.group-service .tx_red {
+    color: #E61F19;
+}
+
+/* 左側の画像 */
+.service-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-image img {
+    max-width: 100%; /* 親要素の幅に収まるように調整 */
+    height: auto; /* 縦横比を保持 */
+    display: block; /* 余白をなくす */
+}
+
+/* 右側のテキストボックス */
+.service-content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* タイトル */
+.service-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-bar {
+    width: 18px;
+    height: 200px;
+    background-color: #D70C18;
+}
+
+.service-title h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1.4;
+}
+
+/* 詳細を見るボタン */
+.btn-detail {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-detail:hover {
+    background: #d01e28;
+}
+
+/* 採用情報セクション */
+.recruit-info {
+    background: url('/asset/img/bg_sec_6.jpg') no-repeat center center/cover;
+    height: 920px;
+    /* 適宜調整 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 80px;
+}
+
+/* テキスト部分 */
+.recruit-content {
+    padding: 20px;
+    max-width: 400px;
+    text-align: left;
+}
+
+.recruit-content h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.recruit-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn-detail {
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-detail:hover {
+    background: #d01e28;
+}
+
+.sec_Sustainability {
+    background: url('/asset/img/bg_sec_5.jpg') no-repeat center center/cover;
+    height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 90px 0 50px;
+}
+
+.sec_Sustainability .tx_red {
+    color: #E61F19;
+}
+
+/* 会社情報セクション */
+.company-info {
+    background: url('/asset/img/bg_sec_7.jpg') no-repeat center center/cover;
+    height: 725px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0 50px 0;
+}
+
+.company-info .ttl_tx_area h3 {
+    padding-bottom: 3rem;
+}
+
+/* タイトルと説明 */
+.sec_content {
+    display: flex;
+    max-width: 1700px;
+    margin: auto;
+    text-align: left;
+    gap: 190px;
+    padding-left: 3%;
+}
+
+.sec_ttl {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    white-space: nowrap;
+}
+
+.sec_ttl h2 {
+    font-size: 4.2rem;
+    font-weight: normal;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec_content p {
+    font-size: 2.3rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.sec_content .more-button {
+    width: 190px;
+    padding: 0;
+    text-align: left;
+    padding-left: 2%;
+}
+
+.ttl_link_area {
+    min-width: 300px;
+    max-width: 700px;
+}
+
+.sec_content .more_btm_wrp {
+    display: flex;
+    justify-content: end;
+}
+
+.ttl_tx_area {
+    color: #fff;
+}
+
+.ttl_tx_area h3 {
+    margin-bottom: 1rem;
+    font-size: 7.2rem;
+    font-weight: normal;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1;
+}
+
+/* 詳細ボタン */
+.btn-detail {
+    display: inline-block;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.btn-detail:hover {
+    background: #d01e28;
+}
+
+/* 会社情報のリンク */
+.company-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 水平方向（左右中央揃え） */
+    align-items: center;
+    /* 垂直方向（上下中央揃え） */
+    gap: 30px;
+    /* リンク間の余白 */
+    text-align: center;
+    /* テキスト中央揃え */
+    height: 130px;
+    /* 高さを指定（適宜調整） */
+
+}
+
+.company-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 550px;
+    width: 550px;
+    height: 130px;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.70);
+    color: #323333;
+    font-size: 3.5rem;
+    text-decoration: none;
+    border: 2px solid rgba(255, 0, 0, 0.3);
+    transition: background 0.3s, border 0.3s;
+}
+
+.company-link:hover {
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+}
+
+/* MST Group セクション */
+.mst-group {
+    max-width: 1700px;
+    text-align: left;
+    padding: 50px 0;
+    margin: auto;
+}
+
+.group-title {
+    max-width: 1700px;
+    width: 100%;
+    font-size: 3.6rem;
+    color: #d01e28;
+    margin-bottom: 20px;
+    font-weight: normal;
+    margin-inline: auto;
+}
+
+/* リンクエリア */
+.group-links {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1700px;
+    justify-content: center;
+    gap: 20px;
+    margin: auto;
+}
+
+/* 個別のリンクアイテム */
+.group-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ロゴとアイコンのリンクボックス */
+.group-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 130px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background 0.3s, border 0.3s;
+}
+
+.group-link:hover {
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px solid rgba(255, 0, 0, 0.6);
+}
+
+/* ロゴとリンクアイコン */
+.group-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 擬似要素で画像を追加 */
+.group-link::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    /* アイコンの幅 */
+    height: 30px;
+    /* アイコンの高さ */
+    background-image: url('/asset/img/icon_link_box.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    /* アイコンとテキストの間隔 */
+}
+
+
+.link-icon {
+    width: 20px;
+    max-height: 20px;
+}
+
+/* テキスト（リンク外に配置） */
+.group-item p {
+    margin-top: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+}
+
+/* 下部の募集代理店情報 */
+.group-info {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #707070;
+    text-align: left;
+}
+
+.group-info p {
+    margin: 0;
+}
+
+.group-info_wrp {
+    max-width: 1700px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: auto;
+}
+
+/* フッター全体 */
+.footer {
+    background: #dce1e6;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+}
+
+/* 上部のナビ部分 */
+.footer-top {
+    max-width: 1700px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+}
+
+.footer_wrp {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+}
+
+/* 各カテゴリ */
+.footer-column {
+    min-width: 150px;
+}
+
+.footer-column h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* リンクリスト */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    font-size: 2rem
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #d01e28;
+}
+
+/* フッター下部 */
+.footer-bottom {
+    max-width: 1700px;
+    margin: auto;
+    display: flex;
+    text-align: center;
+    padding-top: 20px;
+    justify-content: space-between;
+}
+
+/* フッター下部のリンク */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+    align-items: center;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #d01e28;
+}
+
+/* 著作権表示 */
+.copyright {
+    color: #333;
+    font-size: 1.2rem;
+}
+
+
+
+/* 集英する必要があるがとりあえず */
+
+.reverse_area {
+    flex-direction: row-reverse;
+    justify-content: left;
+    margin-top: 115px;
+    text-align: left;
+    gap: 500px;
+    padding-right: 10%;
+
+}
+
+.column_area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+.column_area .sec_ttl {
+    justify-content: center;
+}
+
+.column_area .more_btm_wrp {
+    justify-content: center;
+}
+
+.group-service .sec_content {
+    width: auto;
+    padding-right: 10%;
+}
+
+.group-service .ttl_tx_area {
+    margin-top: 2rem;
+    font-size: 2.6rem;
+
+}
+
+.risk-management .more_btm_wrp {
+    justify-content: center;
+}
+
+.risk-management .sec_content {
+    gap: 35px;
+}
+
+.sec_Sustainability .sec_content {
+    gap: 100px;
+}
+
+@media (max-width: 1800px) {
+    .sec_slider {
+        max-width: 1500px;
+    }
+}
+/* 画面幅1280指定 */
+
+@media (max-width: 1710px) {
+    .menu-item {
+        font-size: 1.8rem;
+    }
+
+    .contact-button {
+        font-size: 1.8rem;
+    }
+   
+    .sec_slider .slick-prev,
+    .sec_slider .slick-next {
+        width: 2%;
+        height: auto;
+    }
+
+    .company-link {
+       max-width: 450px;
+    }
+
+    .group-link {
+        max-width: 450px;
+    }
+
+    .group-item p {
+        font-size: 1.8rem;
+
+}
+
+.submenu li a {
+    font-size: 1.5rem;
+}
+
+}
+
+
+@media (max-width: 1700px) {
+
+    .header-buttons {
+        margin-bottom: 0;
+    }
+
+    .contact-button img {
+        width: 38px;
+        height: auto;
+    }
+
+    .contact-button span {
+        font-size: 1.4rem;
+    }
+
+    .contact-button {
+        font-size: 1.5rem;
+        padding: 0px 15px;
+        border-radius: 0 0px 15px 15px;
+    }
+
+    .logo img {
+        width: 200px;
+    }
+
+    .submenu li a {
+        font-size: 1.4rem;
+    }
+
+    .menu-item {
+        font-size: 1.5rem;
+    }
+
+    .sec_slider {
+        max-width: 1100px;
+        margin: 20px auto;
+    }
+
+    .fv {
+        height: 500px;
+    }
+
+    .fv-content {
+        width: 41%;
+        top: 61%;
+        left: 26%;
+    }
+
+    .news {
+        padding-top: 25px;
+    }
+
+    .news h2 {
+        font-size: 3.5rem;
+    }
+
+    .news-list li {
+        font-size: 1.5rem;
+    }
+
+    .news-tag {
+        font-size: 1.5rem;
+        margin-right: 13px;
+    }
+
+    .news-date {
+        margin-left: 0;
+        margin-right: 0;
+        max-width: 120px;
+    }
+
+    .news-list p img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .more-button {
+        font-size: 1.6rem;
+    }
+
+    .news-list p {
+        line-height: 0.6;
+    }
+
+    .sec_slider h2 {
+        font-size: 3.5rem;
+    }
+
+    .sec_slider .slick-prev,
+    .sec_slider .slick-next {
+        width: 2%;
+        height: auto;
+    }
+
+    .slide-caption {
+        min-height: 85px;
+    }
+
+    .risk-management {
+        height: 460px;
+    }
+
+    .title-bar {
+        width: 12px;
+        height: 130px;
+    }
+
+    .sec_ttl h2 {
+        font-size: 3rem;
+    }
+
+    .ttl_tx_area h3 {
+        font-size: 5rem;
+
+    }
+
+    .risk-management .sec_content {
+        padding-left: 0;
+        padding-right: 18%;
+    }
+
+    .sec_ttl {
+        gap: 20px;
+    }
+
+    .group-service .sec_content p {
+        line-height: 1.2;
+        font-size: 1.8rem;
+        padding-left: 45px;
+    }
+
+    .sec_content p {
+        line-height: 1.2;
+        font-size: 1.8rem;
+    }
+
+    .group-service {
+        padding-left: 25px;
+        padding-bottom: 40px;
+    }
+
+    .group-service .sec_content {
+        padding-right: 13%;
+        margin-top: 125px;
+    }
+
+    .sec_content .more-button {
+        width: 130px;
+    }
+
+    .sec_Sustainability {
+        height: 450px;
+    }
+
+    .sec_Sustainability .sec_content {
+        padding-right: 25%;
+        padding-left: 0;
+    }
+
+    .sec_Sustainability .sec_content {
+        gap: 40px;
+        align-items: center;
+    }
+
+    .recruit-info {
+        background: url(/asset/img/bg_sec_6.jpg) no-repeat center center / cover;
+        min-height: 500px; /* 小さい画面でもレイアウト崩れしにくい */
+        height: auto; /* 高さを自動調整 */
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 40px; /* PCでは余白を保持 */
+    }
+
+    .recruit-info .sec_content {
+        padding: 0;
+        gap: 215px;
+    }
+
+    .reverse_area {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 80px;
+        text-align: left;
+        gap: 211px;
+        padding-right: 0%;
+        align-items: center;
+    }
+
+    .sec_content {
+        padding-left: 0;
+        padding-right: 25%;
+        margin-top: 100px;
+        gap: 100px;
+    }
+
+    .company-info {
+        height: 480px;
+        padding-bottom: 0;
+    }
+
+    .company-link {
+        font-size: 2.5rem;
+        max-width: 320px;
+        height: 80px;
+    }
+
+    .company-info .ttl_link_area {
+        min-width: 250px;
+    }
+
+    .group-link {
+        max-width: 320px;
+        height: 80px;
+    }
+
+    .group-item p {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+
+    .group-title {
+        font-size: 2.6rem;
+        margin-bottom: 3px;
+    }
+
+    .mst-group {
+        max-width: 1160px;
+        text-align: left;
+        padding: 20px 0;
+    }
+
+    .group-links {
+        gap: 10px 20px;
+    }
+
+    .group-info {
+        font-size: 1rem;
+        margin-top: 0;
+    }
+
+    .group-info_wrp {
+        max-width: 1100px;
+    }
+
+    .footer-column h3 {
+        font-size: 1.5rem;
+    }
+
+    .footer-column ul {
+        font-size: 1.2rem;
+    }
+
+    .footer-top {
+        max-width: 1160px;
+    }
+
+    .footer-column {
+        min-width: 60px;
+    }
+
+    .footer {
+        padding: 15px 30px;
+    }
+
+    .footer-links {
+        font-size: 1.2rem;
+    }
+
+    .footer-bottom {
+        max-width: 1160px;
+    }
+
+    .lang-switch {
+        font-size: 15px;
+    }
+
+    .lang-switch img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .group-content img {
+        max-height: 70px;
+    }
+
+    .news-container {
+        margin: 0 0 0 10%;
+    }
+
+    .company-links {
+        gap: 20px;
+    }
+
+    .group-title {
+        width: 95%;
+        margin-inline: auto;
+    }
+
+}
+
+@media (max-width: 1120px) {
+    .company-link,
+    .group-link {
+        max-width: 300px;
+    }
+
+    .recruit-info .sec_content {
+        gap: 110px;
+    }
+
+}
+
+@media (max-width: 960px) {
+
+    .company-link, 
+    .group-link {
+        max-width: 260px;
+    }
+
+    .recruit-info .sec_content {
+        gap: 50px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+
+   
+}
+
+@media (max-width: 768px) {
+    .sec_content {
+        flex-direction: column;
+    }
+
+    .recruit-info {
+        min-height: 300px; /* スマホ時の高さ調整 */
+        padding: 20px; /* 余白を少なめに */
+        justify-content: center; /* 中央寄せ */
+        text-align: center; /* テキスト中央揃え */
+        margin: 20px auto; /* スマホ時の余白を調整 */
+    }
+
+
+ 
+
+    .sec_ttl h2 {
+        font-size: 2.7rem;
+    }
+
+    .news_wrp {
+        flex-direction: column;
+    }
+
+    .news-list li {
+        display: contents;
+        flex-direction: column;
+       
+    }
+
+    .news-list p {
+        line-height: 1.6;
+    }
+
+    .title-bar {
+        width: 8px;
+        height: 68px;
+    }
+
+    .group-service {
+        padding: 0;
+    }
+
+    .sec_Sustainability .sec_content {
+        padding: 0;
+    }
+
+    .sec_content {
+        padding: 0;
+    }
+
+    .ttl_tx_area h3 {
+        font-size: 4.5rem;
+    }
+
+    .sec_content {
+        display: flex;
+        flex-direction: column;
+    }
+
+     /* `h3` を一番上に */
+     .ttl_tx_area {
+        order: 1;
+    }
+
+    /* `.sec_ttl` を2番目 */
+    .sec_ttl {
+        order: 2;
+    }
+
+    /* `.more_btm_wrp` を3番目 */
+    .more_btm_wrp {
+        order: 3;
+    }
+
+}

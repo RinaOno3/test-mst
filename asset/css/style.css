@@ -1,0 +1,610 @@
+/* ===================================
+   🌟 初期設定のCSS (style.css)
+   =================================== */
+
+/* 共通フォント設定 */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    /* 16px × 62.5% = 10px */
+}
+
+/* 全要素のボックスモデルを統一 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 画像の最大幅を制御 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* リンクのデフォルトスタイルを統一 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ヘッディングのマージン調整 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+/* リストのデフォルト調整 */
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/* ボタンの初期スタイル */
+button {
+    font: inherit;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+
+
+/* ヘッダーの基本スタイル */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.header-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.35);
+    /* 75% 透過 */
+}
+
+/* ロゴ設定 */
+.logo img {
+    max-width: 340px;
+}
+
+.nav ul {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav ul li {
+    margin: 0 15px;
+
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+
+.submenu_ttl_wrp {
+    width: 70%;
+    margin-inline: auto;
+}
+
+.submenu_ttl {
+    display: block;
+    color: #fff;
+}
+
+.submenu_ttl::before {
+    content: url(/asset/img/nav_menu_arrow.svg);
+    /* 矢印の記号 */
+    font-size: 14px;
+    /* サイズ調整（必要に応じて変更） */
+    color: white;
+    /* 矢印の色（背景に合わせて変更） */
+    margin-right: 8px;
+    /* 文字との間隔 */
+    display: inline-block;
+    /* インライン要素として表示 */
+    transition: transform 0.3s ease;
+    /* ホバー時のアニメーション */
+}
+
+/* 矢印（`>`）を `.submenu li a` に適用 */
+.submenu li a::before {
+    content: "＞";
+    /* 矢印を追加 */
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 1.4rem;
+    color: white;
+}
+
+
+/* サブメニューの初期設定（非表示） */
+.submenu-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    /* 画面いっぱいに黒背景 */
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 0;
+    z-index: 999;
+
+    /* スライドダウンの初期状態 */
+    transform: translateY(-10px);
+}
+
+/* `.submenu-wrapper` をホバーしたら表示 */
+.menu-item:hover>.submenu-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* メニューがホバーされたときに `a` の背景色を変更 */
+.menu-item:hover > a {
+    background-color: #000; /* 好きな色に変更 */
+    color: white; /* テキスト色も変更（必要なら） */
+}
+
+
+/* `.submenu` を横並びにする */
+.header-container .submenu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    justify-content: left;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    /* 最大幅 */
+}
+
+/* `.submenu` のリンク */
+.submenu li a {
+    position: relative;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.6rem;
+    display: block;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+/* `.submenu` のホバー時 */
+.submenu li a:hover {
+    color: #d01e28;
+}
+
+/* メニューアイテム */
+.menu-item {
+    font-size: 1.8rem;
+}
+
+.menu-item a:hover {
+    background: #000;
+} 
+/* `.submenu-wrapper` に `mouseleave` しても消えないようにする */
+.submenu-wrapper:hover {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 言語切り替えボタン */
+.lang-switch {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.3s ease;
+    gap: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* 擬似要素で左側に白の縦線を追加 */
+.lang-switch::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 縦方向中央揃え */
+    width: 2px;
+    /* 縦線の太さ */
+    height: 40px;
+    /* 縦線の長さ */
+    background-color: white;
+    /* 縦線の色 */
+}
+
+.lang-switch:hover {
+    opacity: 0.8;
+}
+
+/* `.header-buttons` のレイアウト調整 */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: end;
+    padding-right: 30px;
+    margin-bottom: 2rem;
+}
+
+.contact-button {
+    display: flex;
+    align-items: center;
+    background: white;
+    color: #d01e28;
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 8px 15px;
+    border-radius: 0 0px 25px 25px;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+    max-width: 370px;
+}
+
+.contact-button span {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.contact-button:hover {
+    background: #f5f5f5;
+}
+
+.contact-button img {
+    margin-right: 8px;
+    width: 40px;
+    height: 40px;
+}
+
+
+/* リンクボタン */
+/* MOREボタンのスタイル */
+.more-button {
+    display: inline-block;
+    position: relative;
+    padding: 0 35px 0 10px;
+    background: black;
+    color: white;
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    overflow: hidden;
+    z-index: 10;
+    transition: all 0.3s ease; /* スムーズなアニメーション */
+}
+
+.more-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background: #d01e28;
+    clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+    z-index: -1;
+}
+
+.more-button .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.0rem;
+    right: 10px; /* 初期位置 */
+    transition: right 0.3s ease; /* 右方向のアニメーション */
+}
+
+/* ホバー時に矢印を 5px 右に動かす */
+.more-button:hover .arrow {
+    right: 2px; /* 5px 右へ */
+}
+
+/* タイトル */
+.service-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-bar {
+    width: 5px;
+    height: 50px;
+    background-color: #D70C18;
+}
+
+.service-title h2 {
+    font-size: 1.5rem;
+    color: #D70C18;
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+.tx_red {
+    color: #E61F19;
+}
+
+.tx_b {
+    color: #231815;
+}
+
+@media (max-width: 1024px) {
+    .logo img {
+        max-width: 145px;
+    }
+
+    /* ==============================
+   🟢 ヘッダーのデザイン変更（固定赤背景）
+================================= */
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: transparent;
+        /* 初期は透明 */
+        transition: background 0.3s ease;
+        z-index: 1000;
+
+    }
+
+    /* メニューが開いたらヘッダーを赤に */
+    .header.open {
+        background: #D70C18 !important;
+    }
+
+    /* ==============================
+   🟢 ナビゲーションメニュー（下からスライドイン）
+================================= */
+    /* ナビゲーションメニュー（右からスライドイン & ヘッダー分下げる） */
+    .sp-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* 右に隠しておく */
+        width: 75%;
+        height: calc(100% - 60px);
+        /* ヘッダーの高さ分を引いた高さ */
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        transition: right 0.3s ease, top 0.3s ease;
+        /* 右からスライドイン & 上下の移動 */
+        z-index: 999;
+        border-left: 5px solid #D70C18;
+    }
+
+    /* メニューを開いたとき */
+    .sp-nav.open {
+        right: 0;
+        /* 右からスライドイン */
+        top: 60px;
+        /* ヘッダー分下げる */
+    }
+
+
+    /* ヘッダーの背景色変更（スライドインと同時に） */
+    .header {
+        transition: background 0.3s ease;
+        /* 背景色変更をスムーズに */
+    }
+
+    .header.open {
+        background: #D70C18 !important;
+        /* メニューが開いたときに赤に */
+    }
+
+    /* ==============================
+   🟢 ハンバーガーメニューのデザイン
+================================= */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        /* 横方向の中央揃え */
+        width: 50px;
+        /* 40px → 50px に拡大して調整 */
+        height: 40px;
+        cursor: pointer;
+        z-index: 1001;
+        background: #D70C18;
+        padding: 10px;
+        transition: background 0.3s ease;
+        position: absolute;
+        top: 10px;
+        /* 位置を調整 */
+        right: 20px;
+    }
+
+    .hamburger.open {
+        background: #fff;
+    }
+
+    /* 3本線 */
+    .hamburger span {
+        display: block;
+        height: 4px;
+        width: 30px;
+        background: white;
+        transition: all 0.3s ease;
+    }
+
+    /* 「×」に変化するアニメーション */
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(10px) rotate(45deg);
+        background: #D70C18;
+        /* バツの色を赤に */
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+        background: #D70C18;
+        /* バツの色を赤に */
+    }
+
+    /* ヘッダーコンテナ（初期状態） */
+    .header-container {
+        transition: background 0.3s ease;
+    }
+
+    /* メニューが開いたときに背景を赤に */
+    .header.open .header-container {
+        background: #D70C18;
+    }
+
+
+    /* ==============================
+   🟢 メニュー項目のデザイン
+================================= */
+    .sp-nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .sp-nav .menu-item {
+        padding: 10px 20px;
+    }
+
+    .sp-nav .menu-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 矢印を左側に配置 */
+    .menu-link::before {
+        content: "▶";
+        /* 矢印 */
+        font-size: 14px;
+        color: white;
+        /* 必要なら色を変更 */
+        margin-right: 8px;
+        /* 文字との間隔 */
+        position: absolute;
+        left: 3%;
+    }
+
+    /* アコーディオン開いたときに矢印を回転 */
+    .menu-item.open .menu-link::before {
+        transform: rotate(90deg);
+    }
+
+    /* サブメニュー */
+    .submenu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+    }
+
+    .submenu li {
+        padding: 8px 0;
+        padding-left: 15px;
+    }
+
+    .submenu a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* サブメニュー開いたときの表示 */
+    .menu-item.open .submenu {
+        display: block;
+    }
+
+    .submenu li a {
+        padding: 0;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .nav ul li a {
+        padding: 0;
+    }
+} 
+
+/* PC専用（PCで表示、SPでは非表示） */
+.pc_only {
+    display: block;
+    /* デフォルトで表示 */
+}
+
+@media (max-width: 1024px) {
+    .pc_only {
+        display: none !important;
+        /* SP（1024px以下）では非表示 */
+    }
+}
+
+/* SP専用（SPで表示、PCでは非表示） */
+.sp_only {
+    display: none;
+    /* デフォルトで非表示 */
+}
+
+@media (max-width: 1024px) {
+    .sp_only {
+        display: block !important;
+        /* SP（1024px以下）では表示 */
+    }
+}
+
+
+@media (max-width: 1290px) {}
