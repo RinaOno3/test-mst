@@ -597,7 +597,7 @@
     justify-content: center;
     width: 550px;
     height: 130px;
-    padding: 15px;
+    padding: 5px 15px;
     background: rgba(255, 255, 255, 0.9);
     border: 2px solid rgba(0, 0, 0, 0.2);
     text-decoration: none;
