@@ -15,7 +15,8 @@ $(document).ready(function(){
                     slidesToShow: 1, // 768px以下では1枚表示
                     slidesToScroll: 1,
                     centerMode: false, // センターモードを無効化
-                    arrows: false // スマホでは矢印を非表示に（必要なら true に変更）
+                    arrows: true,
+                    dots: true
                 }
             }
         ]

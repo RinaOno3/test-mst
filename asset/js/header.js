@@ -14,64 +14,60 @@ document.querySelectorAll('.menu-item').forEach(item => {
     });
 });
 
-// SP専用
 document.addEventListener("DOMContentLoaded", function () {
-    const mediaQuery = window.matchMedia("(max-width: 1024px)");
+    console.log("SP用のメニュー処理を実行");
 
-    function setupSPMenu() {
-        if (mediaQuery.matches) {
-            console.log("SP用のメニュー処理を実行");
+    // SP専用の要素を取得
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("sp-nav");
+    const header = document.querySelector(".header.sp_only");
+    const headerContainer = document.querySelector(".header-container");
+    const spMenuItems = document.querySelectorAll(".sp-menu-item"); // SP専用のメニュー
 
-            const hamburger = document.getElementById("hamburger");
-            const nav = document.getElementById("sp-nav");
-            const header = document.querySelector(".header.sp_only"); // SP専用の header を取得
-            const headerContainer = document.querySelector(".header-container");
-            const menuItems = document.querySelectorAll(".menu-item");
+    console.log("SP用 header:", header);
+    console.log("hamburger:", hamburger);
+    console.log("nav:", nav);
+    console.log("headerContainer:", headerContainer);
 
-            // `header` が SP 専用のものか確認
-            console.log("SP用 header:", header);
-
-            if (!header) {
-                console.error("⚠️ `.header.sp_only` が見つかりません！");
-                return;
-            }
-
-            // ハンバーガーメニューの開閉処理
-            function toggleMenu(open) {
-                console.log("メニュー開閉:", open);
-                nav.classList.toggle("open", open);
-                document.body.style.overflow = open ? "hidden" : ""; 
-                hamburger.classList.toggle("open", open);
-                header.classList.toggle("open", open); // これでPCの `header` には影響なし！
-                headerContainer.classList.toggle("open", open);
-            }
-
-            // ハンバーガーメニュークリックで開閉
-            hamburger.addEventListener("click", () => {
-                const isOpen = nav.classList.contains("open");
-                toggleMenu(!isOpen);
-            });
-
-            // アコーディオンメニュー（サブメニュー開閉）
-            menuItems.forEach((item) => {
-                const menuLink = item.querySelector(".menu-link");
-                if (menuLink) {
-                    menuLink.addEventListener("click", (e) => {
-                        e.preventDefault();
-                        item.classList.toggle("open");
-
-                        // 他のメニューを閉じる（単一開閉仕様）
-                        menuItems.forEach((otherItem) => {
-                            if (otherItem !== item) {
-                                otherItem.classList.remove("open");
-                            }
-                        });
-                    });
-                }
-            });
-        }
+    // 取得できない要素がある場合、エラーメッセージを出して終了
+    if (!hamburger || !nav || !header) {
+        console.error("⚠️ SPメニューの要素が見つかりません！HTMLのIDやクラスを確認してください！");
+        return;
     }
 
-    setupSPMenu(); // 初回実行
-    mediaQuery.addListener(setupSPMenu); // 画面サイズ変更時にも実行
+    // 🔹 SPハンバーガーメニューの開閉処理
+    function toggleMenu(open) {
+        console.log("メニュー開閉:", open);
+        nav.classList.toggle("open", open);
+        document.body.style.overflow = open ? "hidden" : "";
+        hamburger.classList.toggle("open", open);
+        header.classList.toggle("open", open);
+        if (headerContainer) headerContainer.classList.toggle("open", open);
+    }
+
+    // ハンバーガーメニュークリックで開閉
+    hamburger.addEventListener("click", () => {
+        const isOpen = nav.classList.contains("open");
+        toggleMenu(!isOpen);
+    });
+
+    // 🔹 SPメニューのアコーディオン開閉（PCメニューとは別に管理）
+    spMenuItems.forEach((item) => {
+        const menuLink = item.querySelector(".menu-link");
+        if (menuLink) {
+            menuLink.addEventListener("click", (e) => {
+                e.preventDefault();
+                item.classList.toggle("open");
+
+                // 他のメニューを閉じる（単一開閉仕様）
+                spMenuItems.forEach((otherItem) => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove("open");
+                    }
+                });
+            });
+        }
+    });
+
+    console.log("SPメニューの設定が完了しました ✅");
 });

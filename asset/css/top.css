@@ -1,3 +1,30 @@
+/* PC専用（PCで表示、SPでは非表示） */
+.top_pc_only {
+    display: contents;
+    /* デフォルトで表示 */
+}
+
+@media (max-width: 900px) {
+    .top_pc_only {
+        display: none !important;
+        /* SP（1024px以下）では非表示 */
+    }
+}
+
+/* SP専用（SPで表示、PCでは非表示） */
+.top_sp_only {
+    display: none;
+    /* デフォルトで非表示 */
+}
+
+@media (max-width: 900px) {
+    .top_sp_only {
+        display: block !important;
+        /* SP（1024px以下）では表示 */
+    }
+}
+
+
 /* ファーストビューのスタイル */
 .fv {
     position: relative;
@@ -38,7 +65,7 @@
     background: white;
     padding: 50px 0 20px;
     text-align: left;
-    border-bottom: 2px solid #d01e28;
+    border-bottom: 2px solid #D70C18;
 }
 
 .news-container {
@@ -206,7 +233,7 @@
 
 .slick-dots li {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0;
 }
 
 .slick-dots li button {
@@ -318,9 +345,12 @@
 }
 
 .service-image img {
-    max-width: 100%; /* 親要素の幅に収まるように調整 */
-    height: auto; /* 縦横比を保持 */
-    display: block; /* 余白をなくす */
+    max-width: 100%;
+    /* 親要素の幅に収まるように調整 */
+    height: auto;
+    /* 縦横比を保持 */
+    display: block;
+    /* 余白をなくす */
 }
 
 /* 右側のテキストボックス */
@@ -412,6 +442,7 @@
 }
 
 .sec_Sustainability {
+    width: 100%;
     background: url('/asset/img/bg_sec_5.jpg') no-repeat center center/cover;
     height: 680px;
     display: flex;
@@ -629,7 +660,8 @@
     background-image: url('/asset/img/icon_link_box.svg');
     background-size: contain;
     background-repeat: no-repeat;
-    margin-left: 8px;
+    position: absolute;
+    right: 8px;
     /* アイコンとテキストの間隔 */
 }
 
@@ -670,7 +702,7 @@
 
 /* フッター全体 */
 .footer {
-    background: #dce1e6;
+    background: #D8E1EB;
     padding: 40px 20px;
     font-size: 0.9rem;
 }
@@ -818,6 +850,7 @@
         max-width: 1500px;
     }
 }
+
 /* 画面幅1280指定 */
 
 @media (max-width: 1710px) {
@@ -828,7 +861,7 @@
     .contact-button {
         font-size: 1.8rem;
     }
-   
+
     .sec_slider .slick-prev,
     .sec_slider .slick-next {
         width: 2%;
@@ -836,7 +869,7 @@
     }
 
     .company-link {
-       max-width: 450px;
+        max-width: 450px;
     }
 
     .group-link {
@@ -846,11 +879,11 @@
     .group-item p {
         font-size: 1.8rem;
 
-}
+    }
 
-.submenu li a {
-    font-size: 1.5rem;
-}
+    .submenu li a {
+        font-size: 1.5rem;
+    }
 
 }
 
@@ -891,10 +924,6 @@
     .sec_slider {
         max-width: 1100px;
         margin: 20px auto;
-    }
-
-    .fv {
-        height: 500px;
     }
 
     .fv-content {
@@ -1021,12 +1050,15 @@
 
     .recruit-info {
         background: url(/asset/img/bg_sec_6.jpg) no-repeat center center / cover;
-        min-height: 500px; /* 小さい画面でもレイアウト崩れしにくい */
-        height: auto; /* 高さを自動調整 */
+        min-height: 500px;
+        /* 小さい画面でもレイアウト崩れしにくい */
+        height: auto;
+        /* 高さを自動調整 */
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        margin: 40px; /* PCでは余白を保持 */
+        margin: 40px;
+        /* PCでは余白を保持 */
     }
 
     .recruit-info .sec_content {
@@ -1155,9 +1187,20 @@
         margin-inline: auto;
     }
 
+    .group-link::after {
+        width: 20px;
+        height: 20px;
+
+    }
+
+    .group-link {
+        padding: 5px 30px;
+    }
+
 }
 
 @media (max-width: 1120px) {
+
     .company-link,
     .group-link {
         max-width: 300px;
@@ -1171,7 +1214,7 @@
 
 @media (max-width: 960px) {
 
-    .company-link, 
+    .company-link,
     .group-link {
         max-width: 260px;
     }
@@ -1185,27 +1228,29 @@
     }
 
     .footer-links {
-        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: left;
     }
 
-   
-}
-
-@media (max-width: 768px) {
     .sec_content {
         flex-direction: column;
     }
 
     .recruit-info {
-        min-height: 300px; /* スマホ時の高さ調整 */
-        padding: 20px; /* 余白を少なめに */
-        justify-content: center; /* 中央寄せ */
-        text-align: center; /* テキスト中央揃え */
-        margin: 20px auto; /* スマホ時の余白を調整 */
+        min-height: 300px;
+        /* スマホ時の高さ調整 */
+        padding: 20px;
+        /* 余白を少なめに */
+        justify-content: center;
+        /* 中央寄せ */
+        text-align: center;
+        /* テキスト中央揃え */
+        margin: 0 20px;
+        /* スマホ時の余白を調整 */
     }
 
 
- 
+
 
     .sec_ttl h2 {
         font-size: 2.7rem;
@@ -1218,7 +1263,7 @@
     .news-list li {
         display: contents;
         flex-direction: column;
-       
+
     }
 
     .news-list p {
@@ -1231,14 +1276,11 @@
     }
 
     .group-service {
-        padding: 0;
+        padding: 0 20px 40px 20px;
+        flex-direction: column-reverse;
     }
 
     .sec_Sustainability .sec_content {
-        padding: 0;
-    }
-
-    .sec_content {
         padding: 0;
     }
 
@@ -1249,21 +1291,327 @@
     .sec_content {
         display: flex;
         flex-direction: column;
+        margin-top: 10%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 0;
     }
 
-     /* `h3` を一番上に */
-     .ttl_tx_area {
-        order: 1;
+    .news h2 {
+        font-size: 4rem;
+        letter-spacing: 0;
+        padding-bottom: 1rem;
     }
 
-    /* `.sec_ttl` を2番目 */
+    .news-list p {
+        padding-top: 0.5rem;
+        padding-bottom: 2rem;
+        font-size: 12px;
+    }
+
+    .news_wrp {
+        align-items: center;
+    }
+
+    .news-container {
+        margin-inline: auto;
+    }
+
+    .news {
+        padding: 10px 0 30px 0;
+        border-bottom: 1px solid #D70C18;
+    }
+
+    .news h2 {
+        padding-bottom: 0;
+    }
+
+    .news_wrp {
+        gap: 10px;
+    }
+
+    .slider_wrp {
+        width: 90%;
+    }
+
+    .sec_slider .slick-prev,
+    .sec_slider .slick-next {
+        width: 25px;
+        height: auto;
+    }
+
+    .sec_slider .slick-next {
+        right: -2%;
+    }
+
+    .sec_slider .slick-prev {
+        left: -2%;
+    }
+
+    .sec_slider .slick-dots li button:before {
+        display: block;
+        font-size: 12px;
+    }
+
+    .sec_slider .slick-dots li.slick-active button:before {
+        color: #D70C18;
+    }
+
+    .slide-caption {
+        font-size: 1.6rem;
+        min-height: 70px;
+    }
+
+    .more-button {
+        font-size: 1.6rem;
+        width: 120px;
+        height: 40px;
+    }
+
+    .more-button .arrow {
+        right: 20px;
+    }
+
+    .fv-container {
+        background-image: url(/asset/img/fv_sp.jpg);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 680px;
+    }
+
+    .risk-management {
+        background-image: url(/asset/img/bg_sec_3_sp.jpg);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 600px;
+    }
+
+    .risk-management .sec_content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sec_Sustainability {
+        justify-content: center;
+        background-image: url(/asset/img/bg_sec_5_sp.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 700px;
+        padding: 0px 40px;
+    }
+
+    .recruit-info {
+        background-image: url(/asset/img/bg_sec_6_sp.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 1000px;
+    }
+
+    .company-info {
+        background: url(/asset/img/bg_sec_7_sp.jpg);
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+        min-height: 760px;
+        padding-bottom: 45px;
+        padding: 20px 40px 40px;
+
+        color: #fff;
+    }
+
+    .company-info .sec_content p{
+        margin-bottom: 6rem;
+    }
+
+    .fv-content {
+        left: 50%;
+        width: 85%;
+        top: 38%;
+    }
+
+    .company-link {
+        font-size: 1.8rem;
+        max-height: 40px;
+        width: 80%;
+        height: 45px;
+        max-width: 100%;
+    }
+
+    .company-links {
+        gap: 10px;
+    }
+
+    .group-title {
+        width: 100%;
+        text-align: center;
+    }
+
+    .group-item p {
+        font-size: 0.8rem;
+        font-weight: normal;
+    }
+
+    .group-link {
+        height: 40px;
+        width: 100%;
+        max-width: 180px;
+    }
+
+    .group-links {
+        width: 90%;
+        justify-content: left;
+        margin-inline: auto;
+        gap: 10px;
+    }
+
+    .group-link::after {
+        content: "";
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-image: url(/asset/img/icon_link_box.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        right: 3%;
+        top: 10%;
+    }
+
+    .group-info_wrp {
+        width: 90%;
+        justify-content: left;
+    }
+
+    .footer-column ul {
+        padding-left: 2rem;
+    }
+
+    .footer-column ul li {
+        padding-bottom: 0.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+    .copyright {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .top_tx_area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top_tx_area h2 {
+        font-size: 4.5rem;
+        font-weight: normal;
+        line-height: 1.2;
+        margin-bottom: 0;
+        letter-spacing: 0.8rem;
+    }
+
     .sec_ttl {
-        order: 2;
+        font-size: 2.5rem;
+        align-items: center;
+        gap: 5px;
     }
 
-    /* `.more_btm_wrp` を3番目 */
-    .more_btm_wrp {
-        order: 3;
+    .sec_ttl h3 {
+        margin-bottom: 0;       
+        font-weight: normal;
     }
 
+    .title-bar {
+        width: 9px;
+        height: 41px;
+    }
+
+    .sec_content p {
+        font-size: 2.2rem;
+        margin-bottom: 10rem;
+        line-height: 1.8;
+    }
+
+    .tx_wrp {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+
+    .group-service .sec_content {
+        padding-right: 0;
+        margin-top: 10%;
+    }
+
+    .group-service .sec_content p {
+        padding-left: 0;
+        line-height: 1.8;
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+    .group-service .title-bar {
+        height: 68px;
+    }
+
+    .group-service h3 {
+        line-height: 1.2;
+    }
+
+    .group-service .sec_content p {
+        margin-bottom: 3rem;
+    }
+
+    .sec_Sustainability .sec_content p {
+        margin-bottom: 2rem;
+        font-weight: normal;
+    }
+    
+    .sec_Sustainability .sec_content {
+        padding: 0;
+        margin: 0;
+    }
+
+    .sec_Sustainability .top_tx_area h2 {
+        font-size: 4rem;
+        letter-spacing: 0.5rem;
+    }
+
+    .sec_Sustainability .tx_wrp {
+        gap: 50px;
+    }
+
+    .recruit-info .sec_content p {
+       margin-bottom: 0;
+    }
+
+    .recruit-info .tx_wrp {
+        color: #fff;
+        gap: 40px;
+    }
+
+    .sec_content .more_btm_wrp {
+        justify-content: center;
+    }
+
+
+}
+
+@media (max-width: 760px) {
+
+    .group-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 46%;
+        justify-content: center;
+    }
 }

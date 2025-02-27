@@ -63,6 +63,29 @@ button {
     cursor: pointer;
     background: none;
 }
+/*  トップに戻るボタン   */
+#scroll-top {
+    position: fixed;
+    right: 5%;
+    bottom: 8%;
+    width: 40px;  /* ボタンのサイズ */
+    height: 40px;
+    cursor: pointer;
+    display: none;  /* 初期状態では非表示 */
+    z-index: 1000; /* 他の要素より上に表示 */
+  }
+  
+  #scroll-top img {
+    width: 100%;
+    height: auto;
+    opacity: 0.7; /* 透明度を少し下げる */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #scroll-top:hover img {
+    opacity: 1; /* ホバー時に明るくする */
+  }
+  
 
 
 
@@ -305,7 +328,8 @@ button {
 /* リンクボタン */
 /* MOREボタンのスタイル */
 .more-button {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     position: relative;
     padding: 0 35px 0 10px;
     background: black;
