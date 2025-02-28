@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ===================================
    🌟 初期設定のCSS (style.css)
    =================================== */
@@ -627,12 +628,42 @@ button {
     /* デフォルトで非表示 */
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .sp_only {
         display: block !important;
         /* SP（1024px以下）では表示 */
     }
 }
 
+/* 下層ページ */
 
-@media (max-width: 1290px) {}
+
+
+/* ページタイトル部分 */
+.page-title {
+    background-image: url(/asset/img/page_ttl.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* コンテンツエリア */
+.content-wrapper {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-sub {
+    padding-top: 80px; /* ヘッダーの高さ分余白を確保 */
+}
+
+@media (max-width: 1024px)  {
+    .page-sub {
+        padding-top: 55px; /* ヘッダーの高さ分余白を確保 */
+    }
+}

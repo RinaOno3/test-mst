@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+/* ページタイトル部分 */
+.page-title {
+    background-image: url(/asset/img/page_ttl.jpg);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: #333;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* コンテンツエリア */
+.content-wrapper {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card_wrp {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+/* カードの基本デザイン */
+.card-link {
+    width: 48%;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 画像エリア */
+.card-image img {
+    width: 100%;
+    display: block;
+}
+
+/* カード全体 */
+.card {
+    position: relative; /* 🔥 オーバーレイの基準 */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* 画像エリア */
+.card-image {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 画像をレスポンシブ対応 */
+.card-image img {
+    width: 100%;
+    display: block;
+}
+
+/* 🔹 赤いオーバーレイ（画像の上に配置） */
+.card-overlay {
+    position: absolute; /* 画像の上に配置 */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #D80C18;
+    color: white;
+    padding: 10px 20% 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100px; /* 🔹 必要なら調整 */
+    z-index: 2; /* 🔥 確実に画像の上に表示 */
+}
+
+/* タイトル */
+.card-overlay h3 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 説明文 */
+.card-overlay p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* 🔹 `.card-overlay::after` に矢印画像を追加 */
+.card-overlay::after {
+    content: "";
+    display: inline-block;
+    width: 100px;
+    height: 10px;
+    background: url('/asset/img/company/top/cade_arrow.svg') no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    right: 5%; /* 🔹 矢印の位置調整 */
+    bottom: 20px; /* 🔹 必要に応じて変更 */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🔹 ホバー時に矢印を右に移動 */
+.card-link:hover .card-overlay::after {
+    transform: translateX(20%);
+}
+
+@media screen and (max-width: 768px) {
+    .card_wrp {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card-link {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .card-overlay h3 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin: 0;
+    }
+    
+    /* 説明文 */
+    .card-overlay p {
+        font-size: 1.2rem;
+        margin: 5px 0 0;
+    }
+}

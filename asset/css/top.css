@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* PC専用（PCで表示、SPでは非表示） */
 .top_pc_only {
     display: contents;
