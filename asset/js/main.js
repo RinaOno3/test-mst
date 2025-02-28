@@ -74,3 +74,20 @@ function loadHeaderJS() {
 
   console.log("✅ SPメニューの設定が完了しました！");
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollTopBtn = document.getElementById("scroll-top");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add("show-scroll"); // 300px以上スクロールで表示
+        } else {
+            scrollTopBtn.classList.remove("show-scroll"); // それ以下なら非表示
+        }
+    });
+
+    scrollTopBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});

@@ -85,6 +85,10 @@ button {
   #scroll-top:hover img {
     opacity: 1; /* ホバー時に明るくする */
   }
+
+  .show-scroll {
+    display: block !important;
+}
   
 
 
@@ -428,10 +432,10 @@ button {
     /* ナビゲーションメニュー（右からスライドイン & ヘッダー分下げる） */
     .sp-nav {
         position: fixed;
-        top: 0;
+        top: 59px;
         right: -100%;
         /* 右に隠しておく */
-        width: 75%;
+        width: 90%;
         height: calc(100% - 60px);
         /* ヘッダーの高さ分を引いた高さ */
         background: rgba(0, 0, 0, 0.9);
@@ -448,7 +452,7 @@ button {
     .sp-nav.open {
         right: 0;
         /* 右からスライドイン */
-        top: 60px;
+        top: 59px;
         /* ヘッダー分下げる */
     }
 
